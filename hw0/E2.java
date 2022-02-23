@@ -1,27 +1,17 @@
 public class E2 {
     public static int max(int[] m){
-        int L;
-        L = m.length;
         int current_max = m[0];
-        int i = 0;
-        int j = 0;
-        while (i < L-1) {
-            j = i + 1;
-            while (j < L) {
-                if (m[i]>=m[j]) {
-                    current_max = m[i];
-                }else{
-                    current_max = max[j];
-                }
-                j = j + 1;
+        for (int i = 0; i < m.length; i++) {
+            if (current_max<=m[i]) {
+                current_max = m[i];
             }
-            i = i + 1 ;
         }
         return current_max;
     }
     public static void main(String[] args) {
         int max_val;
-        int[] numbers = new int[]{12,23,45,2,6};
+        int[] numbers = new int[]{9,2,15,12,2,22,10,6};
         max_val = max(numbers);
+        System.out.println(max_val);
     }
 }
