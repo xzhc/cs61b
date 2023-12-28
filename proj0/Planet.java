@@ -56,4 +56,27 @@ public class Planet {
         double f = calcForceExertedBy(p);
         return f * dy / r;
     }
+
+    /** calcNetForceExertedByX and calcNetForceExertedByY */
+    public double calcNetForceExertedByX(Planet[] allPlanets) {
+        double totalForce = 0;
+        for (Planet planet : allPlanets) {
+            if (this.equals(planet)) {
+                continue;
+            }
+            totalForce = totalForce + calcForceExertedByX(planet);
+        }
+        return  totalForce;
+    }
+
+    public double calcNetForceExertedByY(Planet[] allPlanets) {
+        double totalForce = 0;
+        for (Planet planet : allPlanets) {
+            if (this.equals(planet)) {
+                continue;
+            }
+            totalForce = totalForce + calcForceExertedByY(planet);
+        }
+        return  totalForce;
+    }
 }
