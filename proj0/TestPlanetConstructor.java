@@ -1,5 +1,6 @@
 /**
  *  Tests the Planet constructor.
+ * @author 18389
  */
 public class TestPlanetConstructor {
 
