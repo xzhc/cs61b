@@ -79,4 +79,14 @@ public class Planet {
         }
         return  totalForce;
     }
+
+    /** update */
+    public void update(double dt, double fX, double fY) {
+        double ax = fX / mass;
+        double ay = fY / mass;
+        xxVel = xxVel + ax * dt;
+        yyVel = yyVel + ay * dt;
+        xxPos = xxPos + xxVel * dt;
+        yyPos = yyPos + yyVel * dt;
+    }
 }
