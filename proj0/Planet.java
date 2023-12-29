@@ -13,7 +13,7 @@ public class Planet {
     private static final double G = 6.67e-11;
     /** Planet Constructor */
 
-    public Planet (double xP, double yP, double xV, double yV, double m, String img) {
+    public Planet(double xP, double yP, double xV, double yV, double m, String img) {
         xxPos = xP;
         yyPos = yP;
         xxVel = xV;
@@ -22,7 +22,7 @@ public class Planet {
         imgFileName = img;
     }
 
-    public Planet (Planet p) {
+    public Planet(Planet p) {
         xxPos = p.xxPos;
         yyPos = p.yyPos;
         xxVel = p.xxVel;
@@ -33,7 +33,8 @@ public class Planet {
 
     /** calcDistance */
     public double calcDistance(Planet p) {
-        return Math.sqrt((xxPos-p.xxPos)*(xxPos-p.xxPos) + (yyPos-p.yyPos)*(yyPos-p.yyPos));
+        return Math.sqrt((xxPos - p.xxPos) * (xxPos - p.xxPos)
+                + (yyPos - p.yyPos) * (yyPos - p.yyPos));
     }
 
     /** calcForceExertedBy */
