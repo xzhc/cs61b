@@ -33,7 +33,7 @@ public class LinkedListDeque<T> {
     /** constructor for deque */
     public LinkedListDeque() {
         sentinel = new Node(null, null);
-        sentinel.next.pre = sentinel;
+        sentinel.next = sentinel;
         sentinel.pre = sentinel;
         size = 0;
     }
