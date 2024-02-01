@@ -143,6 +143,9 @@ public class ArrayDeque<T> {
 
     /** Gets the item at the given index */
     public T get(int index) {
+        if (index > size) {
+            return null;
+        }
         int ptr = front;
         for (int i = 0; i < index; i++) {
             ptr = plusOne(ptr, length);
