@@ -36,7 +36,7 @@ public class ArrayDeque<T> {
     /** return the "index+1"*/
     private int plusOne(int index, int module) {
         index %= module;
-        if (index == module -1) {
+        if (index == module - 1) {
             return 0;
         }
         return index + 1;
@@ -51,7 +51,7 @@ public class ArrayDeque<T> {
     }
 
     /** array grow */
-    public void grow() {
+    private void grow() {
         T[] newArray = (T[]) new Object[length * 2];
         int ptr1 = front;
         int ptr2 = length;
@@ -67,10 +67,10 @@ public class ArrayDeque<T> {
     }
 
     /** array shrink */
-    public void shrink() {
+    private void shrink() {
         T[] newArray = (T[]) new Object[length / 2];
         int ptr1 = front;
-        int ptr2 = length / 2;
+        int ptr2 = length / 4;
         while (ptr1 != last) {
             newArray[ptr2] = array[ptr1];
             ptr1 = plusOne(ptr1, length);
