@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,5 +15,25 @@ public class TestPalindrome {
             actual += d.removeFirst();
         }
         assertEquals("persiflage", actual);
+    }
+
+    @Test
+    public void testIsPalindrome() {
+
+        // 测试回文字符串
+        Assert.assertTrue(palindrome.isPalindrome("racecar"));
+        Assert.assertTrue(palindrome.isPalindrome("madam"));
+        Assert.assertTrue(palindrome.isPalindrome("kayak"));
+
+        //测试非回文字符串
+        Assert.assertFalse(palindrome.isPalindrome("race"));
+        Assert.assertFalse(palindrome.isPalindrome("mad"));
+        Assert.assertFalse(palindrome.isPalindrome("kay"));
+
+        //测试空字符串
+        Assert.assertTrue(palindrome.isPalindrome(""));
+
+        //测试长度为1的字符串
+        Assert.assertTrue(palindrome.isPalindrome("a"));
     }
 }
